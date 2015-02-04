@@ -4,6 +4,8 @@ import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 /**
  * Created by James on 03/02/2015.
@@ -15,7 +17,17 @@ public class Cart {
     private static String CART_QUANTITY_NAME = "cart[add][quantity]";
 
     public Cart(String url) {
-        this.url = url;
+        this.url = buildCartUrl(url);
+    }
+
+    private String buildCartUrl(String itemUrl) {
+        try {
+            URL cartUrl = new URL(itemUrl);
+            return itemUrl.replace(cartUrl.getPath(), "/cart.js");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public String addToCart(String value) throws IOException {
