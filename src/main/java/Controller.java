@@ -4,8 +4,9 @@
 public class Controller {
 
     public static void main(String[] args) {
+//        new Sniper(Integer.toString(i), "http://snipertest.bigcartel.com/product/test", "").start();
+        for (int i = 0; i < 400; ++i)
+            new Sniper(Integer.toString(i), "http://shop.casualco.com/product/victorinox-swiss-army-knife", "RED").start();
         //400
-        for (int i = 0; i < 4; ++i)
-            new Sniper(Integer.toString(i), "http://snipertest.bigcartel.com/product/test", "").start();
     }
 }

@@ -25,7 +25,7 @@ public class Sniper implements Runnable {
         String productId = null;
 
         while (productId == null) {
-            System.out.println("trying.... " +t.getName());
+            System.out.println("trying.... " + t.getName());
             try {
                 productId = new Form(Jsoup.connect(itemUrl).get()).getValue(option);
             } catch (IOException e) {
@@ -34,15 +34,14 @@ public class Sniper implements Runnable {
 
         }
 
-        String cookie = "";
         try {
-            Cart cart = new Cart("http://snipertest.bigcartel.com/cart");
-            cookie = cart.addToCart(productId);
+            Cart cart = new Cart(itemUrl);
+            String cookie = cart.addToCart(productId);
+            if (cookie != null)
+                System.out.println("Cookie: " + cookie);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Cookie: " + cookie);
 
     }
 

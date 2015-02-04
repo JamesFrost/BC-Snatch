@@ -32,14 +32,15 @@ public class Cart {
 
     public String addToCart(String value) throws IOException {
         try {
-            HttpResponse<JsonNode> response = Unirest.post("http://snipertest.bigcartel.com/cart.js")
+            HttpResponse<JsonNode> response = Unirest.post(url)
                     .header("accept", "text/javascript, text/html, application/xml, text/xml, */*")
                     .header("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8")
                     .field(CART_ID_NAME, value)
                     .field(CART_QUANTITY_NAME, "1")
                     .asJson();
 
-            return response.getHeaders().getFirst("set-cookie");
+            if (!response.getBody().getObject().names().get(0).equals("errors"))
+                return response.getHeaders().getFirst("set-cookie");
 
         } catch (UnirestException e) {
             e.printStackTrace();
