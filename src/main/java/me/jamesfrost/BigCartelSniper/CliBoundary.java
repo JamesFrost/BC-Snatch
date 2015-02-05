@@ -8,7 +8,7 @@ public class CliBoundary {
     public static void main(String[] args) {
 
         Controller controller = new Controller(args);
-//        controller.beginSnipe();
+        controller.beginSnipe();
 
     }
 

@@ -27,7 +27,7 @@ public class InputParser {
         value = new RegularLanguage(valueTokens);
     }
 
-    public void parse(String[] args) throws MalformedURLException {
+    public Map<String, String> parse(String[] args) {
 
         int pointer = 0;
         Map<String, String> parameters = new HashMap<String, String>();
@@ -41,7 +41,12 @@ public class InputParser {
 
         System.out.println("isverbose: " + isVerbose);
 
-        URL tmpUrl = new URL(args[pointer]);
+        try {
+            URL tmpUrl = new URL(args[pointer]);
+        } catch (MalformedURLException e) {
+            System.err.println("URL invalid.");
+            System.exit(1);
+        }
         parameters.put("itemUrl", args[pointer]);
 
         System.out.println("url: " + args[pointer]);
@@ -55,6 +60,8 @@ public class InputParser {
             parameters.put("option", "");
 
         System.out.println(args[pointer]);
+
+        return parameters;
 
     }
 
