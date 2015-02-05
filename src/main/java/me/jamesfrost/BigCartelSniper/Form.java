@@ -5,6 +5,8 @@ import org.jsoup.Jsoup;
 import java.io.IOException;
 
 /**
+ * Handles all interactions with the form on the BigCartel item page.
+ *
  * Created by James Frost on 03/02/2015.
  */
 public class Form {

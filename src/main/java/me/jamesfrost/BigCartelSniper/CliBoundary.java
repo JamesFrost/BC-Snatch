@@ -1,6 +1,9 @@
 package me.jamesfrost.BigCartelSniper;
 
 /**
+ * BigCartelSniper v1.0.0
+ * http://jamesfrost.me
+ *
  * Created by James Frost on 04/02/2015.
  */
 public class CliBoundary {

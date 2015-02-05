@@ -10,7 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Created by James on 03/02/2015.
+ * Handles all interactions with the BigCartel cart.
+ *
+ * Created by James Frost on 03/02/2015.
  */
 public class Cart {
     private String url;

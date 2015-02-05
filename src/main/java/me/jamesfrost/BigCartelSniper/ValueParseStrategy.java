@@ -5,7 +5,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 /**
- * Created by James on 05/02/2015.
+ * Strategy for paring the form on the item page for the product id.
+ *
+ * Created by James Frost on 05/02/2015.
  */
 public class ValueParseStrategy extends FormParseStrategy {
 

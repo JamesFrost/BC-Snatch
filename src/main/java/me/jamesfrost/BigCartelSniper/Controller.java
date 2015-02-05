@@ -3,19 +3,22 @@ package me.jamesfrost.BigCartelSniper;
 import java.util.Map;
 
 /**
+ * Controller.
+ *
  * Created by James Frost on 03/02/2015.
  */
 public class Controller {
 
     private String itemUrl;
-    private int noThreads;
     private String option;
+    private int noThreads;
     private boolean isVerboseMode;
 
     public Controller(String[] args) {
 
         InputParser test = new InputParser();
         Map<String, String> parameters = test.parse(args);
+        isVerboseMode = Boolean.getBoolean(parameters.get("verboseMode"));
         itemUrl = parameters.get("itemUrl");
         option = parameters.get("option");
         noThreads = 1;
@@ -23,11 +26,10 @@ public class Controller {
     }
 
     public void beginSnipe() {
-//        new me.jamesfrost.BigCartelSniper.Sniper(Integer.toString(i), "http://snipertest.bigcartel.com/product/test", "").start();
+        System.out.println();
+        System.out.println("Beginning snipe....");
         for (int i = 0; i < noThreads; ++i)
             new Sniper(Integer.toString(i), itemUrl, option).start();
-//            new me.jamesfrost.BigCartelSniper.Sniper(Integer.toString(i), "http://shop.casualco.com/product/victorinox-swiss-army-knife", "RED").start();
-        //400
     }
 
 }

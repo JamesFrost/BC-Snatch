@@ -3,7 +3,9 @@ package me.jamesfrost.BigCartelSniper;
 import java.util.ArrayList;
 
 /**
- * Created by James on 04/02/2015.
+ * Models a regular language.
+ *
+ * Created by James Frost on 04/02/2015.
  */
 public class RegularLanguage {
 
@@ -13,14 +15,12 @@ public class RegularLanguage {
         this.tokens = tokens;
     }
 
-    public void addToken(String token) {
-        tokens.add(token);
-    }
-
     public boolean isInLanuage(String haystack) {
         for (String token : tokens) {
-            if (haystack.matches(token))
+            if (haystack.matches(token)) {
+                tokens.remove(token);
                 return true;
+            }
         }
         return false;
     }
