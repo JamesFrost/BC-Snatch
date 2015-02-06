@@ -11,7 +11,7 @@ import java.net.URL;
 
 /**
  * Handles all interactions with the BigCartel cart.
- *
+ * <p/>
  * Created by James Frost on 03/02/2015.
  */
 public class Cart {
@@ -42,8 +42,6 @@ public class Cart {
                     .field(CART_ID_NAME, value)
                     .field(CART_QUANTITY_NAME, "1")
                     .asJson();
-
-            System.out.println(response.getBody().toString());
 
             if (!response.getBody().getObject().names().get(0).equals("errors"))
                 return response.getHeaders().getFirst("set-cookie");

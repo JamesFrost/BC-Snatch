@@ -25,14 +25,14 @@ public class Sniper implements Runnable {
         String productId = null;
 
         while (productId == null) {
-            System.out.println("Thread " + t.getName() + " polling....");
+//            System.out.println("Thread " + t.getName() + " polling....");
             productId = form.getValue();
         }
 
         try {
             String cookie = cart.addToCart(productId);
             if (cookie != null)
-                System.out.println("Cookie: " + cookie);
+                System.out.println(cookie + "\n \n");
         } catch (IOException e) {
             System.err.println("Adding to cart failed.");
         }

@@ -4,7 +4,7 @@ import java.util.Map;
 
 /**
  * Controller.
- *
+ * <p/>
  * Created by James Frost on 03/02/2015.
  */
 public class Controller {
@@ -18,16 +18,23 @@ public class Controller {
 
         InputParser test = new InputParser();
         Map<String, String> parameters = test.parse(args);
-        isVerboseMode = Boolean.getBoolean(parameters.get("verboseMode"));
+        isVerboseMode = Boolean.parseBoolean(parameters.get("verboseMode"));
         itemUrl = parameters.get("itemUrl");
         option = parameters.get("option");
-        noThreads = 1;
+        noThreads = 10;
 
     }
 
     public void beginSnipe() {
-        System.out.println();
-        System.out.println("Beginning snipe....");
+        if (isVerboseMode) {
+            System.out.println("\nSniping: " + itemUrl);
+            if (!option.equals(""))
+                System.out.println("Option: " + option);
+            else
+                System.out.println("Option: No option");
+            System.out.println("Number of threads: " + noThreads + "\n");
+            System.out.println("Beginning snipe...\n");
+        }
         for (int i = 0; i < noThreads; ++i)
             new Sniper(Integer.toString(i), itemUrl, option).start();
     }

@@ -6,7 +6,7 @@ import java.io.IOException;
 
 /**
  * Handles all interactions with the form on the BigCartel item page.
- *
+ * <p/>
  * Created by James Frost on 03/02/2015.
  */
 public class Form {
@@ -19,7 +19,6 @@ public class Form {
 
         if (chosenOption.equals("")) {
             formParseStrategy = new NoValueParseStrategy(chosenOption);
-            System.out.println("URL: " + url);
         } else
             formParseStrategy = new ValueParseStrategy(chosenOption);
 
@@ -29,7 +28,7 @@ public class Form {
         try {
             return formParseStrategy.parseForm(Jsoup.connect(url).get());
         } catch (IOException e) {
-            System.err.println("Timed out...");
+//            System.err.println("Timed out...");
         }
         return null;
     }
