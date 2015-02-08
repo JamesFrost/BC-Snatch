@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.After;
 
 /**
- * me.jamesfrost.BigCartelSniper.Form Tester.
+ * me.jamesfrost.BCSnatch.Form Tester.
  *
  * @author <Authors name>
  * @version 1.0

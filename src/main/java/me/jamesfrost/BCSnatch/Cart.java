@@ -1,4 +1,4 @@
-package me.jamesfrost.BigCartelSniper;
+package me.jamesfrost.BCSnatch;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;

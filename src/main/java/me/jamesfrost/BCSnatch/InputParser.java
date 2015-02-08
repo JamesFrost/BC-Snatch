@@ -1,4 +1,4 @@
-package me.jamesfrost.BigCartelSniper;
+package me.jamesfrost.BCSnatch;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -34,7 +34,7 @@ public class InputParser {
     }
 
     private void showInfo() {
-        System.out.println("\n\n               BigCartel Sniper - v1.0.0");
+        System.out.println("\n\n               BigCartel Snatch - v1.0.0");
         System.out.println("                           ______\n" +
                 "        |\\_______________ (_____\\\\______________\n" +
                 "HH======#H###############H#######################\n" +
@@ -42,18 +42,16 @@ public class InputParser {
                 "                          ))    \\#H\\       `\"Y###\n" +
                 " By James Frost           \"      }#H)\n jamesfrost.me\n");
 
-
-//        System.out.println("BigCartelSniper - Version 1.0.0\nCreated by James Frost\nDistributed under the GLP");
         System.exit(0);
     }
 
     private void showHelp() {
-        System.out.println("\nA sniper for the BigCartel platform.\n" +
+        System.out.println("\nA 'sniper' for the BigCartel platform.\n" +
                 "Will output cookies for sessions that have the items in the basket. " +
                 "These can be injected into your browser, where you can checkout.");
         System.out.println("\nOVERVIEW\nbgsnipe [-v] [item-url] [option]\n");
         System.out.println("-v\n    Verbose Mode (optional)\n");
-        System.out.println("item-url\n  URL of BigCartel item to snipe\n");
+        System.out.println("item-url\n  URL of BigCartel item to snatch\n");
         System.out.println("option\n    E.g. SMALL, MEDIUM, LARGE (optional) (case sensitive - has to be an exact match)\n");
         System.exit(0);
     }
@@ -88,7 +86,6 @@ public class InputParser {
             try {
                 URL tmpUrl = new URL(args[pointer]);
             } catch (MalformedURLException e) {
-                System.out.println("Error");
                 error();
             }
         } else {

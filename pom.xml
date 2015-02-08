@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>me.jamesfrost.bgsniper</groupId>
-    <artifactId>BigCartelSniper</artifactId>
+    <groupId>me.jamesfrost.bcsnatch</groupId>
+    <artifactId>BC-Snatch</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -18,7 +18,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>me.jamesfrost.BigCartelSniper.CliBoundary</mainClass>
+                            <mainClass>me.jamesfrost.BCSnatch.CliBoundary</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -67,6 +67,5 @@
         </dependency>
 
     </dependencies>
-
 
 </project>

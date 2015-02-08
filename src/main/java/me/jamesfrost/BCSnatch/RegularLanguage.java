@@ -1,4 +1,4 @@
-package me.jamesfrost.BigCartelSniper;
+package me.jamesfrost.BCSnatch;
 
 import java.util.ArrayList;
 

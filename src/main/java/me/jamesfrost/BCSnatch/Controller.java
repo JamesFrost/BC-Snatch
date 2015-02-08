@@ -1,4 +1,4 @@
-package me.jamesfrost.BigCartelSniper;
+package me.jamesfrost.BCSnatch;
 
 import java.util.Map;
 
@@ -27,13 +27,13 @@ public class Controller {
 
     public void beginSnipe() {
         if (isVerboseMode) {
-            System.out.println("\nSniping: " + itemUrl);
+            System.out.println("\nSnatching: " + itemUrl);
             if (!option.equals(""))
                 System.out.println("Option: " + option);
             else
                 System.out.println("Option: No option");
             System.out.println("Number of threads: " + noThreads + "\n");
-            System.out.println("Beginning snipe...\n");
+            System.out.println("Beginning snatch...\n");
         }
         for (int i = 0; i < noThreads; ++i)
             new Sniper(Integer.toString(i), itemUrl, option).start();
