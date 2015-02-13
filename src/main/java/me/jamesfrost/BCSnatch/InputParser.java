@@ -34,7 +34,7 @@ public class InputParser {
     }
 
     private void showInfo() {
-        System.out.println("\n\n               BigCartel Snatch - v1.0.0");
+        System.out.println("\n\n               BigCartel Snatch - v1.0.1");
         System.out.println("                           ______\n" +
                 "        |\\_______________ (_____\\\\______________\n" +
                 "HH======#H###############H#######################\n" +
