@@ -5,7 +5,6 @@ import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -34,7 +33,7 @@ public class Cart {
         }
     }
 
-    public String addToCart(String value) throws IOException {
+    public String addToCart(String value) {
         try {
             HttpResponse<JsonNode> response = Unirest.post(url)
                     .header("accept", "text/javascript, text/html, application/xml, text/xml, */*")
@@ -45,9 +44,11 @@ public class Cart {
 
             if (!response.getBody().getObject().names().get(0).equals("errors"))
                 return response.getHeaders().getFirst("set-cookie");
+            else
+                return "Out of stock.";
 
         } catch (UnirestException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return null;
     }

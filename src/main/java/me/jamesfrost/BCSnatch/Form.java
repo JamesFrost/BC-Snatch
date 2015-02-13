@@ -28,7 +28,7 @@ public class Form {
         try {
             return formParseStrategy.parseForm(Jsoup.connect(url).get());
         } catch (IOException e) {
-//            System.err.println("Timed out...");
+            System.err.println("Timed out...");
         }
         return null;
     }

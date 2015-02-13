@@ -1,7 +1,5 @@
 package me.jamesfrost.BCSnatch;
 
-import java.io.IOException;
-
 /**
  * Created by James Frost on 03/02/2015.
  */
@@ -23,19 +21,18 @@ public class Sniper implements Runnable {
 
     public void snipe() {
         String productId = null;
+        String cookie = null;
 
         while (productId == null) {
 //            System.out.println("Thread " + t.getName() + " polling....");
             productId = form.getValue();
         }
 
-        try {
-            String cookie = cart.addToCart(productId);
-            if (cookie != null)
-                System.out.println(cookie + "\n \n");
-        } catch (IOException e) {
-            System.err.println("Adding to cart failed.");
-        }
+        do {
+            cookie = cart.addToCart(productId);
+        } while (cookie == null);
+
+        System.out.println(cookie + "\n \n");
 
     }
 
