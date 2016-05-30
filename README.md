@@ -1,5 +1,5 @@
 # BC-Snatch
-A 'sniper' for the <a href="https://www.bigcartel.com/">BigCartel webstore</a>.
+A 'sniper' for the <a href="https://www.bigcartel.com/">BigCartel webstore platform</a>.
 
 Used to buy limited edition items.
 
