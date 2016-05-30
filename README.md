@@ -49,7 +49,7 @@ _big_cartel_session=BAh7BzoPc2Vzc2lvbl9pZCIlY2JiZjIyODk2YTliNTA5MmJjOGFkYTBiZDc2
 ```
 
 ## Disclaimer
-I am not responsible for anything you hooligans might do with this. Use at your own risk. Provided for educational purposes only.
+Use at your own risk. Provided for educational purposes only.
 
 ## License
 MIT
